@@ -13,14 +13,9 @@ int menu(){
     printf("|3. Chuong trinh tinh tien cho quan karaoke                      |\n");
     printf("|4. Tinh tien dien                                               |\n");
     printf("|5. Chuc nang doi tien                                           |\n");
-    printf("|6. Xay dung chuong trinh tinh lai xuat vay ngan hang vay tra gop|\n");
-    printf("|7. Xay dung chuong trinh vay tien mua xe                        |\n");
-    printf("|8. Sap xep thong tin sinh vien                                  |\n");
-    printf("|9. Xay dung game FPT-LOTT                                       |\n");
-    printf("|10. Xay dung chuong trinh tinh toan phan so                     |\n");
-    printf("|11. Exit                                                        |\n");
+    printf("|6. Exit                                                        |\n");
     printf("+------------------------===== END =====-------------------------+\n");
-	printf("Moi ban chon so tu[1-11]\n");
+	printf("Moi ban chon so tu[1-6]\n");
 	int chon ;
 	scanf("%d",&chon);
 	return chon;
@@ -171,8 +166,8 @@ printf("\nSo to 1 nghin dong la: %d", soto1);
 main(){
     while(true){
         int chon = menu();
-        if(chon>11 || chon <1){
-        	printf("Chon so tu 1-11 .Vui long chon lai \n");
+        if(chon>6 || chon <1){
+        	printf("Chon so tu 1-6 .Vui long chon lai \n");
         	}else{
 			
             
@@ -193,22 +188,6 @@ main(){
               doiTien();
             break;
             case 6:
-              
-            break;
-            case 7:
-              
-            break;
-            case 8:
-              
-            break;
-            case 9:
-              
-            break;
-            case 10:
-              
-            break;
-            
-            case 11:
           	exit(0);
            	break;
                 	
