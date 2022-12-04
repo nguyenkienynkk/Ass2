@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <math.h>
+#include<string.h>
 
 
 int menu(){
@@ -128,7 +129,60 @@ int menu(){
 	}
 	
 		}
-		
+//		struct sinhVien{
+//			char tenSV[30];
+//			float diem;
+//			};
+//			void nhapBai8(	struct sinhVien dssv[] ,int n);
+//			
+//				
+//		void sapXepBai8(	struct sinhVien dssv[] ,int n);
+//			void xuatBai8(	struct sinhVien dssv[] ,int n);
+//			int CN8(){
+//				struct sinhVien dssv[50];
+//				int n=3;
+//				nhapBai8(dssv,n);
+//				sapXepBai8(dssv,n);
+//				xuatBai8(dssv,n);
+//				}
+//				void nhapBai8(	struct sinhVien dssv[] ,int n){
+//					for(int i = 0;i<n;i++){
+//						printf("Nhap ten:");
+//						fflush(stdin);
+//						gets(dssv.[i].tenSV);
+//						printf("Nhap diem:");
+//						scanf("%f",&dssv.diem);
+//						}
+//					}
+//						void sapXepBai8(struct sinhVien dssv[] ,int n){
+//							struct sinhVien sv;
+//							for(int i=0;i>0;i--){
+//								for (int i=0;j<=i;j++){
+//									if(dssv[j-1].diem<dssv[j].diem){
+//										sv=dssv[j-1].diem<dssv.[j].diem;
+//										dssv[j]=sv;
+//										}
+//									}
+//								}
+//							}
+//								void xuatBai8(	struct sinhVien dssv[] ,int n){
+//									char xepLoai[10];
+//									printf("%20s  | %5s |%10s\n","Ho ten","Diem","Xeploai");
+//									for(int i=0;i<n;i++){
+//										if(dssv.[i].diem>=9){
+//											strcpy(xepLoai,"Xuat sac");
+//											}else if(dssv.[i].diem>=8){
+//												strcpy(xepLoai,"Gioi");
+//												}else if(dssv.[i].diem>=6.5){
+//													strcpy(xepLoai,"Kha");
+//													}else if(dssv.[i].diem>=5){
+//														strcpy(xepLoai,"Trung binh");
+//														}else {
+//													strcpy(xepLoai,"Yeu");	
+//															}
+//										}
+//										printf("%-20s| %5.1f|%10s\n",dssv.[i].ten,dssv.[i].diem,xepLoai);
+//									}
 		void doiTien(){
 		int soTien;
 int soto200, soto100, soto50, soto20, soto10,soto5,soto2,soto1;
@@ -163,7 +217,54 @@ printf("\nSo to 10 nghin dong la: %d", soto10);
 printf("\nSo to 5 nghin dong la: %d", soto5);
 printf("\nSo to 2 nghin dong la: %d", soto2);
 printf("\nSo to 1 nghin dong la: %d", soto1);
-		}		
+		}
+	void Laisuat(int tienvay){
+	int nam = 1;
+	int tienlai;
+	int tiengoc = tienvay /288;
+	int tientra;
+	int tiencon;
+	tiencon = tienvay;
+	printf("Ky han | Lai phai tra | Goc phai tra | so tien phai tra | so tien con lai | \n");
+	for(int i = 1; i <= 288; i++){
+		tienlai = tiencon * 0.06;
+		tientra = tiengoc + tienlai;
+		tiencon = tiencon - tiengoc;
+		printf("--------------------------------------------\n");
+		printf("%6d | ",i);
+		printf("%12d | ",tienlai);
+		printf("%12d | ",tiengoc);
+	    printf("%16d | ",tientra);
+		printf("%15d | ",tiencon);
+		printf("\n");
+		if(i % 12 == 0){
+			nam++;
+			printf("\n");
+			printf("//===========================Ket thuc %d nam========================\n",nam);
+			printf("\n");
+		}
+	}
+	printf("Chuong trinh tra gop mua xe \n");
+		int tienxe = 800000;
+		tienvay = 0;
+		int tientratruoc = 0;
+		tientratruoc = tienxe * 0.2;
+		tienvay = tienxe * 0.8;
+		printf("Tien vay: %d\n",tienvay);
+	    if(tienvay >500000){
+	    
+	    	tientratruoc = tienxe - tienvay;
+	    	Laisuat(tienvay);
+	    	printf("So tien vay cua ban vuot han muc quy dinh \n");
+	    	printf("tien tra truoc: %d \n",tientratruoc);
+	    	printf("tien vay: %d \n",tienvay);
+		}else{
+		
+		
+	    	printf("tien tra truoc: %d \n",tientratruoc);
+	    	printf("tien vay: %d \n",tienvay);
+		}
+}		
 				
 
 
@@ -196,7 +297,7 @@ main(){
               
             break;
             case 7:
-              
+              Laisuat(500000);
             break;
             case 8:
               
